@@ -1,4 +1,4 @@
-pyipa-dist: a lib for creates plist and html from IPA file
+pyipa_dist: a lib for creates plist and html from IPA file
 ----------------------------------
 
 This is a library to easily creates plist and html from IPA file for Adhoc distribution, and also a command line utility to do that
