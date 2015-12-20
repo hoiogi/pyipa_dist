@@ -6,16 +6,25 @@ This is a library to easily creates plist and html from IPA file for Adhoc distr
 # Usage
 
 ```
-    Usage:
-    pyipa_dist [-p --params=<json_parameters_file>] IPA [FILE_OUT_DIR]
-    pyipa_dist
-    pyipa_dist (-h | --help)
-    pyipa_dist --version
+Usage:
+pyipa_dist [-p --params=<json_parameters_file>] IPA [FILE_OUT_DIR]
+pyipa_dist
+pyipa_dist (-h | --help)
+pyipa_dist --version
 
-    Options:
-    -p --params=<json_parameters_file> Parameters JSON file.
-    -h --help               Show this screen.
-    --version               Show version.
+Options:
+-p --params=<json_parameters_file> Parameters JSON file.
+-h --help               Show this screen.
+--version               Show version.
+```
+
+## json_parameters_file sample
+
+```
+{
+    "adhoc_title": "test_title",
+    "adhoc_plist_url": "http://m.naver.com"
+}
 ```
 
 # Contribute
