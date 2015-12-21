@@ -40,7 +40,7 @@ setup(
     name                = get_init_val('title'),
     version             = get_init_val('version'),
     description         = get_init_val('description'),
-    long_description    = open('README.md').read(),
+    long_description    = open('README').read(),
     author              = get_init_val('author'),
     author_email        = get_init_val('author_email'),
     url                 = get_init_val('url'),
@@ -48,5 +48,6 @@ setup(
     license             = get_init_val('license'),
     install_requires    = ['docopt', 'pyipa', 'jinja2'],
     packages            = PACKAGES,
-    scripts             = SCRIPTS
+    scripts             = SCRIPTS,
+    keywords            = ['pyipa', 'dist', 'distribution', 'adhoc', 'ipa']
 )
