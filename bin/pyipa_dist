@@ -26,19 +26,19 @@
 """pyipa_dist.
 
 Usage:
-    pyipa_dist [-p --params=<json_parameters_file>] IPA [FILE_OUT_DIR]
-    pyipa_dist
+    pyipa_dist [-d --destUrlPath=<DestinationUrl>] IPA [FILE_OUT_DIR]
     pyipa_dist (-h | --help)
     pyipa_dist --version
 
 Options:
-    -p --params=<json_parameters_file> Parameters JSON file.
+    -d --destUrlPath=<DestinationUrl> Path is the output files(html, plist, ipa) location in distribution server.
+                                      (eg. "https://qa.ncsoft.com/QADeploy/CredentialSDK/20151210/")
     -h --help               Show this screen.
     --version               Show version.
 """
 
 from docopt import docopt
-from pyipa_dist import HTMLMaker
+from pyipa_dist import HTMLMaker, PlistMaker
 import sys
 import json
 import os
@@ -48,26 +48,31 @@ def err(msg):
     sys.exit(2)
 
 if __name__ == '__main__':
-    arguments = docopt(__doc__, version='1.0', options_first=True)
+    arguments = docopt(__doc__, version='1.0.0', options_first=True)
 
     ipaFilePath = arguments['IPA']
     ipaFileName = os.path.splitext(ipaFilePath)[0]
     htmlMaker = HTMLMaker(ipaFilePath)
+    plistMaker = PlistMaker(ipaFilePath)
 
     outHtml=""
-    if arguments['--params']:
-        f = open(arguments['--params'])
-        jsonString = f.read()
-        outHtml = htmlMaker.makeHtml(json.loads(jsonString))
-        f.close()
+    outPlist=""
+    if arguments['--destUrlPath']:
+        outHtml = htmlMaker.makeHtml(arguments['--destUrlPath'])
+        outPlist = plistMaker.makePlist(arguments['--destUrlPath'])
     else:
-        err('Need params')
+        err('Invaild argument: --destUrlPath')
 
     if arguments['FILE_OUT_DIR']:
         f = open(os.path.join(arguments['FILE_OUT_DIR'], ipaFileName + '.html'), 'w')
         f.write(outHtml)
         f.close()
+
+        f = open(os.path.join(arguments['FILE_OUT_DIR'], ipaFileName + '.plist'), 'w')
+        f.write(outPlist)
+        f.close()
     else:
         print outHtml
+        print outPlist
 
 

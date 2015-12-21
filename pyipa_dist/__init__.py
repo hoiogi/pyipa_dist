@@ -10,7 +10,7 @@ pyipa_dist
 """
 
 __title__ = 'pyipa_dist'
-__version__ = '1.0'
+__version__ = '1.0.0'
 __description__ = 'This python module to creates plist, html file for Adhoc distribution'
 __url__ = 'https://github.com/hoiogi/pyipa_dist'
 __build__ = 1
@@ -20,3 +20,4 @@ __license__ = 'MIT'
 __copyright__ = 'Copyright 2015 ChangWook Jeong'
 
 from .HTMLMaker import HTMLMaker
+from .PlistMaker import PlistMaker
