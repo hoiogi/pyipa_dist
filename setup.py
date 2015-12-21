@@ -40,7 +40,7 @@ setup(
     name                = get_init_val('title'),
     version             = get_init_val('version'),
     description         = get_init_val('description'),
-    long_description    = open('README').read(),
+    long_description    = open('README.rst').read(),
     author              = get_init_val('author'),
     author_email        = get_init_val('author_email'),
     url                 = get_init_val('url'),
