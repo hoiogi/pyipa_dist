@@ -18,6 +18,10 @@ HTML_TEMPLATE='''
             click this link to install
         </a>
     </p>
+    <p align=center>
+        <br><br><br><br><br><br><br><br><br>
+        made by <a href="https://github.com/hoiogi/pyipa_dist">pyipa_dist</a>
+    </p>
 </body>
 </html>
 '''
