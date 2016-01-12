@@ -48,7 +48,7 @@ def err(msg):
     sys.exit(2)
 
 if __name__ == '__main__':
-    arguments = docopt(__doc__, version='1.0.0', options_first=True)
+    arguments = docopt(__doc__, version='1.0.3', options_first=True)
 
     ipaFilePath = arguments['IPA']
     ipaFileName = os.path.splitext(ipaFilePath)[0]
