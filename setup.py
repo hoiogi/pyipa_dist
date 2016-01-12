@@ -49,5 +49,6 @@ setup(
     install_requires    = ['docopt', 'pyipa', 'jinja2'],
     packages            = PACKAGES,
     scripts             = SCRIPTS,
-    keywords            = ['pyipa', 'dist', 'distribution', 'adhoc', 'ipa']
+    keywords            = ['pyipa', 'dist', 'distribution', 'adhoc', 'ipa'],
+    download_url        = 'https://github.com/hoiogi/pyipa_dist/tarball/1.0.3',
 )
